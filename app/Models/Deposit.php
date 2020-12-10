@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Deposit extends Model
 {
+    const PERCENT = 20;
+    const DURATION = 10;
+
     protected $primaryKey = 'deposit_id';
 
     public $timestamps = false;

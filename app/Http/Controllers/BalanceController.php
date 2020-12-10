@@ -54,14 +54,4 @@ class BalanceController extends Controller
         $balance = $balance ?? '0';
         return view('balance.show', compact('balance'));
     }
-
-    /**
-     * Get Wallet model by current user id
-     *
-     * @return Wallet
-     */
-    private function getWalletByUserId() : Wallet
-    {
-        return Wallet::where('user_id', auth()->id())->get()->first();
-    }
 }

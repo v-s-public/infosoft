@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('login', 30);
             $table->string('email', 191)->unique();
             $table->string('password', 191);
-            $table->timestamp('created_at')->default(now());
+            $table->timestamp('created_at')->useCurrent();
         });
     }
 

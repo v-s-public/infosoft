@@ -19,9 +19,10 @@ class CreateDepositsTable extends Migration
             $table->unsignedInteger('wallet_id');
             $table->unsignedDouble('invested', 50, 2);
             $table->unsignedDouble('percent', 50, 2);
+            $table->unsignedDouble('amount_of_accrue', 50, 2)->nullable();
             $table->unsignedTinyInteger('active');
             $table->unsignedTinyInteger('duration');
-            $table->unsignedTinyInteger('accrue_times');
+            $table->unsignedTinyInteger('accrue_times')->nullable()->default(null);
             $table->timestamp('created_at')->useCurrent();
 
             $table->foreign('user_id')

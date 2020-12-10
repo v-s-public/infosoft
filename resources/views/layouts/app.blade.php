@@ -37,8 +37,9 @@
                                 </li>
                             @endif
                         @else
-                            <li><a href="">Balance</a></li>
+                            <li><a href="{{route('balance')}}">Balance</a></li>
                             <li><a href="">Deposits</a></li>
+                            <li><a href="{{route('transactions.index')}}">Transactions</a></li>
                             <li>
                                 <a href="{{ route('logout') }}"
                                    onclick="event.preventDefault();

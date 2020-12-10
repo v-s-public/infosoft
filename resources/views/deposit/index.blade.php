@@ -21,13 +21,13 @@
                         <tbody>
                         @foreach($deposits as $item)
                             <tr>
-                                <td>{{$item['deposit_id']}}</td>
-                                <td>{{$item['invested']}}</td>
-                                <td>{{$item['percent']}}</td>
-                                <td>{{$item['accrue_times']}}</td>
-                                <td>{{$item['duration']}}</td>
-                                <td>{{$item['active']}}</td>
-                                <td>{{$item['created_at']}}</td>
+                                <td>{{$item->deposit_id}}</td>
+                                <td>{{$item->invested}}</td>
+                                <td>{{$item->percent}}</td>
+                                <td>{{$item->accrue_times}}</td>
+                                <td>{{$item->amount_of_accrue}}</td>
+                                <td>{{$item->active}}</td>
+                                <td>{{$item->created_at}}</td>
                             </tr>
                         @endforeach
                         </tbody>

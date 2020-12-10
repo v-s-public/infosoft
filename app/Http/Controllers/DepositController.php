@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\DepositRequest;
 use App\Models\Deposit;
 use App\Models\Transactions\TransactionCreateDeposit;
-use App\Models\Transactions\TransactionEnter;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 
@@ -18,7 +17,7 @@ class DepositController extends Controller
      */
     public function index() : View
     {
-        $deposits = Deposit::where('user_id', auth()->id())->get()->toArray();
+        $deposits = Deposit::where('user_id', auth()->id())->get();
         return view('deposit.index', compact('deposits'));
     }
 
@@ -51,8 +50,7 @@ class DepositController extends Controller
             'invested' => $invested,
             'percent' =>  Deposit::PERCENT,
             'active' => 1,
-            'duration' => Deposit::DURATION,
-            'accrue_times' => 0
+            'duration' => Deposit::DURATION
         ]);
 
         TransactionCreateDeposit::create([

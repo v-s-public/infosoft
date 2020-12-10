@@ -17,14 +17,15 @@
                     <tbody>
                     @foreach($transactions as $item)
                         <tr>
-                            <td>{{$item['transaction_id']}}</td>
-                            <td>{{$item['type']}}</td>
-                            <td>{{$item['amount']}}</td>
-                            <td>{{$item['created_at']}}</td>
+                            <td>{{$item->transaction_id}}</td>
+                            <td>{{$item->type}}</td>
+                            <td>{{$item->amount}}</td>
+                            <td>{{$item->created_at}}</td>
                         </tr>
                     @endforeach
                     </tbody>
                 </table>
+                {{ $transactions->links() }}
             </div>
         </div>
     </div>

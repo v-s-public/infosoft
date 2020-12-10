@@ -27,4 +27,9 @@ class Deposit extends Model
         'duration',
         'accrue_times'
     ];
+
+    public function wallet()
+    {
+        return $this->belongsTo(Wallet::class, 'wallet_id');
+    }
 }

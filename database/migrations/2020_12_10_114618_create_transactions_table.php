@@ -19,7 +19,7 @@ class CreateTransactionsTable extends Migration
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('wallet_id');
             $table->unsignedInteger('deposit_id')->nullable();
-            $table->unsignedDouble('amount', 50, 2);
+            $table->unsignedDouble('amount', 50, 2)->nullable();
             $table->timestamp('created_at')->useCurrent();
 
             $table->foreign('user_id')
